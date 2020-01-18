@@ -1,0 +1,11 @@
+<table>
+  <ng-container *ngFor="let out of result; let i = index">
+    <tr>
+      <ng-container *ngFor="let point of out; let j = index">
+        <td>
+            {{point}}
+        </td>
+      </ng-container>
+    </tr>
+  </ng-container>
+</table>
