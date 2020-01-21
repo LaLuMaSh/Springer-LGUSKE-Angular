@@ -1,0 +1,48 @@
+h1 {
+  text-align: center;
+}
+
+table {
+  margin:1em auto;
+}
+td {
+  height:60px;
+  width:60px;
+  border:2px solid;
+  text-align:center;
+  vertical-align: top;
+}
+
+td:first-child {
+  border-left:solid;
+}
+td:nth-child(6n) {
+  border-right:solid ;
+}
+tr:first-child {
+  border-top:solid;
+}
+tr:nth-child(6n) td {
+  border-bottom:solid ;
+}
+
+td:hover {
+  background-color: darkgrey;
+}
+
+.box-one{
+  background-color: lightgray;
+}
+
+.box-two {
+  background-color: white;
+}
+
+input {
+  width: 36px;
+}
+
+button {
+  background-color: grey;
+}
+

@@ -1,0 +1,19 @@
+<ng-container *ngFor="let result of results; let p = index">
+  <div>
+    <h1>{{p + 1}}</h1>
+    <mat-divider></mat-divider>
+  </div>
+  <table>
+    <ng-container *ngFor="let out of result.values; let i = index">
+      <tr>
+        <ng-container *ngFor="let point of out; let j = index">
+          <td>
+            {{point}}
+          </td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </table>
+  <br>
+</ng-container>
+

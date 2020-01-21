@@ -6,17 +6,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoardComponent } from './board/board.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { MultiBordComponent } from './multi-bord/multi-bord.component';
+import {MatDividerModule} from '@angular/material';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BoardComponent
+    BoardComponent,
+    MultiBordComponent,
+    HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatDividerModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
