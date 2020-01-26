@@ -1,0 +1,26 @@
+<mat-card>
+  <form [formGroup]="group" name="form" novalidate (ngSubmit)="saveEntry(f)" #f="ngForm">
+    <h2>Brett erstellen</h2>
+    <mat-form-field>
+      <input id="dimensions" matInput placeholder="dimensions" formControlName="dimensions" required min="0"
+             type="number"
+             [(ngModel)]="location.dimensions">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="x" matInput placeholder="X" formControlName="x" required min="0" type="number"
+             [(ngModel)]="location.x">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="y" matInput placeholder="Y" formControlName="y" required [(ngModel)]="location.y">
+    </mat-form-field>
+    <br>
+    <button mat-button type="submit" name="submit" [disabled]="!group.valid">
+      <a [routerLink]="['/board', location.dimensions, location.x, location.y]">Anzeigen</a>
+    </button>
+    <button mat-button type="submit" name="submit" [disabled]="!group.valid">
+      <a [routerLink]="['/boards', location.dimensions, location.x, location.y]">Alle Anzeigen</a>
+    </button>
+  </form>
+</mat-card>

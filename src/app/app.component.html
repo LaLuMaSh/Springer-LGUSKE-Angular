@@ -1,3 +1,27 @@
-<app-board></app-board>
-baum
-<app-multi-bord></app-multi-bord>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <nav>
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <div class="example-sidenav-content">
+            <button type="button" mat-button (click)="drawer.toggle()">
+              Navigation
+            </button>
+          </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button mat-button>
+            <a routerLink="/home" routerLinkActive="active">Home</a>
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </nav>
+  </mat-drawer>
+
+  <div class="sidenav-button" *ngIf="!drawer.opened">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Navigation
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
