@@ -16,11 +16,11 @@
       <input id="y" matInput placeholder="Y" formControlName="y" required [(ngModel)]="location.y">
     </mat-form-field>
     <br>
-    <button mat-button type="submit" name="submit" [disabled]="!group.valid">
-      <a [routerLink]="['/board', location.dimensions, location.x, location.y]">Anzeigen</a>
+    <button mat-button type="submit" name="submit" [disabled]="!group.valid || !isValid()" (click)="navigate(location, '/board')">
+      Anzeigen
     </button>
-    <button mat-button type="submit" name="submit" [disabled]="!group.valid">
-      <a [routerLink]="['/boards', location.dimensions, location.x, location.y]">Alle Anzeigen</a>
+    <button mat-button type="submit" name="submit" [disabled]="!group.valid || !isValid()" (click)="navigate(location, '/boards')">
+      Alle Anzeigen
     </button>
   </form>
 </mat-card>

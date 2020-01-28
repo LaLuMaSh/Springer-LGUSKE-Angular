@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {BoardLocation} from '../../_model/board';
 import {FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-board-form',
@@ -15,12 +16,23 @@ export class BoardFormComponent implements OnInit {
     y: new FormControl('', [Validators.min(0)]),
     dimensions: new FormControl('', [Validators.min(0)]),
   }, Validators.required);
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.location = new BoardLocation();
   }
 
   saveEntry(f: FormGroupDirective) {
+  }
+
+  navigate(location: BoardLocation, url: string) {
+    this.router.navigate([url, location.dimensions, location.x, location.y]);
+  }
+
+  isValid(): boolean {
+    return !(this.location.x >= this.location.dimensions ||
+      this.location.y >= this.location.dimensions ||
+      this.location.x < 0 ||
+      this.location.y < 0);
   }
 }

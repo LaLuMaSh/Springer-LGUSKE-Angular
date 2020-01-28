@@ -12,6 +12,8 @@ export class BoardComponent implements OnInit {
   result: Board;
   ready = false;
   location: BoardLocation;
+  error = '';
+  hasError = false;
 
   constructor(private board: BoardService, private activatedRoute: ActivatedRoute) {
     this.location = new BoardLocation();
@@ -24,6 +26,9 @@ export class BoardComponent implements OnInit {
     this.board.getBoard(this.location.x, this.location.y, this.location.dimensions).subscribe(value => {
       this.result = value;
       this.ready = true;
+    }, error => {
+      error = 'Invalide URL Parameter...';
+      this.hasError = true;
     });
   }
 }

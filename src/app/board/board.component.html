@@ -1,5 +1,9 @@
 
-<div *ngIf="ready">
+<div *ngIf="hasError">
+  <h1>{{error}}</h1>
+</div>
+
+<div *ngIf="ready && error=='' && !hasError">
   <table>
     <ng-container *ngFor="let out of result.values; let i = index">
       <tr>
