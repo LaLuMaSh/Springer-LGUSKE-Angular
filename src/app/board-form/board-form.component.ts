@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BoardLocation} from '../../_model/board';
 import {FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -9,8 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./board-form.component.css']
 })
 export class BoardFormComponent implements OnInit {
-  @Input() location: BoardLocation;
-  @Output() locationChange = new EventEmitter<BoardLocation>();
+  location: BoardLocation;
   group = new FormGroup({
     x: new FormControl('', [Validators.min(0)]),
     y: new FormControl('', [Validators.min(0)]),
